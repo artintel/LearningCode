@@ -1,0 +1,2 @@
+制作 .lst : python make_lst.py --dataset-dir D:\PycharmProjects\LearningProject\insightface_pytorch_datasets_make\EAR_train --list-file D:\PycharmProjects\L
+earningProject\insightface_pytorch_datasets_make\lst\train.lst --img-ext '.bmp'
