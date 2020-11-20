@@ -19,9 +19,9 @@ import argparse
 
 parser = argparse.ArgumentParser(description='generate image pairs')
 # general
-parser.add_argument('--data-dir', default='', help='')
-parser.add_argument('--outputtxt', default='', help='path to save.')
-parser.add_argument('--num-samepairs', default=11000)
+parser.add_argument('--data-dir', default='D:\PycharmProjects\LearningProject\insightface_pytorch_datasets_make\dataset_file\EAR_train', help='')
+parser.add_argument('--outputtxt', default='D:\PycharmProjects\LearningProject\insightface_pytorch_datasets_make\dataset_file\lst\pairs.txt', help='path to save.')
+parser.add_argument('--num-samepairs', default=170)
 args = parser.parse_args()
 cnt = 0
 same_list = []
@@ -44,7 +44,7 @@ for folder in folders_1:
     for item in itertools.combinations(sublist, 2):
         for name in item:
             same_list.append(name)
-    if len(same_list) > 4 and len(same_list) < 3000:
+    if len(same_list) > 50 and len(same_list) < 100:
         for j in range(0, len(same_list), 2):
                 if count < int(args.num_samepairs):#数量可以修改
                     dst.writelines(same_list[j] + ' ' + same_list[j+1]+ ' ' + '1' + '\n')

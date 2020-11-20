@@ -158,7 +158,7 @@ def parse_args():
                         help='If this is set im2rec will create image list(s) by traversing root folder\
         and output to <prefix>.lst.\
         Otherwise im2rec will read <prefix>.lst and create a database at <prefix>.rec')
-    cgroup.add_argument('--exts', nargs='+', default=['.jpg', '.bmp'],
+    cgroup.add_argument('--exts', nargs='+', default=['.bmp'],
                         help='list of acceptable image extensions.')
     cgroup.add_argument('--chunks', type=int, default=1, help='number of chunks.')
     cgroup.add_argument('--train-ratio', type=float, default=1.0,
@@ -173,8 +173,8 @@ def parse_args():
         im2rec will randomize the image order in <prefix>.lst')
 
     rgroup = parser.add_argument_group('Options for creating database')
-    rgroup.add_argument('--quality', type=int, default=95,
-                        help='JPEG quality for encoding, 1-100; or PNG compression for encoding, 1-9')
+    # rgroup.add_argument('--quality', type=int, default=95,
+    #                     help='JPEG quality for encoding, 1-100; or PNG compression for encoding, 1-9')
     rgroup.add_argument('--num-thread', type=int, default=1,
                         help='number of thread to use for encoding. order of images will be different\
         from the input list if >1. the input list will be modified to match the\

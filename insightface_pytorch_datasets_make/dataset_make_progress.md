@@ -27,7 +27,6 @@ python face2rec.py --prefix D:\PycharmProjects\LearningProject\insightface_pytor
 ```bash
 python generate_image_pairs.py --data-dir D:\PycharmProjects\LearningProject\
 insightface_pytorch_datasets_make\dataset_file\EAR_train --outputtxt D:\PycharmProjects\LearningProject\insightface_pytorch_datasets_make\dataset_file\lst\pairs.txt
-
 ```
 
 # 生成 .bin 文件

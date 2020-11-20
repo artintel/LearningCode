@@ -158,6 +158,30 @@ def evaluate(embeddings, actual_issame, nrof_folds=10, pca = 0):
         np.asarray(actual_issame), 1e-3, nrof_folds=nrof_folds)
     return tpr, fpr, accuracy, val, val_std, far
 
+# def get_paths(pairs, same_pairs):
+#     nrof_skipped_pairs = 0
+#     path_list = []
+#     issame_list = []
+#     cnt = 1
+#     for pair in pairs:
+#       path0 = pair[0]
+#       path1 = pair[1]
+#
+#       if cnt < same_pairs:
+#         issame = True
+#       else:
+#         issame = False
+#       if os.path.exists(path0) and os.path.exists(path1):    # Only add the pair if both paths exist
+#         path_list += (path0,path1)
+#         issame_list.append(issame)
+#       else:
+#         print('not exists', path0, path1)
+#         nrof_skipped_pairs += 1
+#       cnt += 1
+#     if nrof_skipped_pairs>0:
+#         print('Skipped %d image pairs' % nrof_skipped_pairs)
+#     return path_list, issame_list
+
 def get_paths(pairs, same_pairs):
     nrof_skipped_pairs = 0
     path_list = []
@@ -166,6 +190,7 @@ def get_paths(pairs, same_pairs):
     for pair in pairs:
       path0 = pair[0]
       path1 = pair[1]
+      
 
       if cnt < same_pairs:
         issame = True
@@ -188,6 +213,7 @@ def read_pairs(pairs_filename):
         for line in f.readlines()[1:]:
             pair = line.strip().split()
             pairs.append(pair)
+
     return np.array(pairs)
 
 
